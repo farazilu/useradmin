@@ -69,10 +69,10 @@ class Useradmin_Provider_Facebook extends Provider {
 	}
 
 	/**
-	 * Attempt to get the email from the provider (e.g. for finding an existing account to associate with).
+	 * Attempt to get the email from the Provider (e.g. for finding an existing account to associate with).
 	 * @return string
 	 */
-	public function email()
+	public function Email()
 	{
 		if (isset($this->me['email']))
 		{

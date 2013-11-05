@@ -24,7 +24,7 @@ echo '<li>'.$form->label('username', __('Email or Username')).'</li>';
 echo $form->input('username', null, array('class' => 'text twothirds'));
 
 echo '<li>'.$form->label('password', __('Password'),array('style'=>'display: inline; margin-right:10px;')).
-     '<small> '.Html::anchor('user/forgot', __('Forgot your password?')).'<br></small>'.
+     '<small> '.HTML::anchor('user/forgot', __('Forgot your password?')).'<br></small>'.
      '</li>';
 echo $form->password('password', null, array('class' => 'text twothirds'));
 
@@ -32,7 +32,7 @@ echo $form->password('password', null, array('class' => 'text twothirds'));
 $authClass = new ReflectionClass(get_class(Auth::instance()));
 if($authClass->hasMethod('auto_login'))
 {
-echo '<li>'.Kohana_Form::checkbox('remember','remember',false,array('style'=>'margin-right: 10px','id'=>'remember')).
+echo '<li>'.Kohana_FORM::checkbox('remember','remember',false,array('style'=>'margin-right: 10px','id'=>'remember')).
             $form->label('remember', __('Remember me'),array('style'=>'display: inline')).
             $form->submit(NULL, __('Login'),array('style'=>'float: right;')).
      '</li>';
@@ -51,7 +51,7 @@ $options = array_filter(Kohana::$config->load('useradmin.providers'));
 if($registerEnabled || !empty($options)) {
 	echo '<ul>';
 	if($registerEnabled)
-		echo '<li style="height: 61px">'.__('Don\'t have an account?').' '.Html::anchor('user/register', __('Register a new account')).'.</li>';
+		echo '<li style="height: 61px">'.__('Don\'t have an account?').' '.HTML::anchor('user/register', __('Register a new account')).'.</li>';
 	if(!empty($options)) {
 		if($registerEnabled)
 			echo '<li style="padding-bottom: 8px;"><label>'.__('To register / log in using another account, please click your provider').':</label></li>';

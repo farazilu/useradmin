@@ -2,8 +2,8 @@
 <div class="block">
    <div class="submenu">
       <ul>
-         <li><?php echo Html::anchor('user/profile_edit', __('Edit profile')); ?></li>
-         <li><?php echo Html::anchor('user/unregister', __('Delete account')); ?></li>
+         <li><?php echo HTML::anchor('user/profile_edit', __('Edit profile')); ?></li>
+         <li><?php echo HTML::anchor('user/unregister', __('Delete account')); ?></li>
       </ul>
       <br style="clear:both;">
    </div>

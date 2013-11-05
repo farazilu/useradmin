@@ -66,7 +66,7 @@ class Useradmin_Appform {
 	{
 		if (isset($this->errors[$name]))
 		{
-			$attributes = Appform::add_class($attributes, 'error');
+			$attributes = AppfORM::add_class($attributes, 'error');
 		}
 		if (isset($this->defaults[$name]) && $value == NULL)
 		{
@@ -279,7 +279,7 @@ class Useradmin_Appform {
 	public function submit($name, $value, array $attributes = NULL)
 	{
 		return Kohana_Form::submit($name, $value, 
-		Appform::add_class($attributes, 'submit'));
+		AppfORM::add_class($attributes, 'submit'));
 	}
 
 	/**

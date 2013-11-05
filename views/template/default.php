@@ -18,13 +18,13 @@
 			$registerEnabled = Kohana::$config->load('useradmin.register_enabled');
 
 			if (Auth::instance()->logged_in()){
-				echo '<li>'.Html::anchor('admin_user', 'User admin').'</li>';
-				echo '<li>'.Html::anchor('user/profile', 'My profile').'</li>';
-				echo '<li>'.Html::anchor('user/logout', 'Log out').'</li>';
+				echo '<li>'.HTML::anchor('admin_user', 'User admin').'</li>';
+				echo '<li>'.HTML::anchor('user/profile', 'My profile').'</li>';
+				echo '<li>'.HTML::anchor('user/logout', 'Log out').'</li>';
 			} else {
 				if($registerEnabled)
-					echo '<li>'.Html::anchor('user/register', 'Register').'</li>';
-				echo '<li>'.Html::anchor('user/login', 'Log in').'</li>';
+					echo '<li>'.HTML::anchor('user/register', 'Register').'</li>';
+				echo '<li>'.HTML::anchor('user/login', 'Log in').'</li>';
 			}
            ?>
          </ul>

@@ -58,7 +58,7 @@ class Useradmin_Controller_App extends Controller {
 	 */
 	public function access_required()
 	{
-		Request::current()->redirect('user/noaccess');
+		HTTP::redirect('user/noaccess');
 	}
 
 	/**
@@ -69,7 +69,7 @@ class Useradmin_Controller_App extends Controller {
 	public function login_required()
 	{
 		Cookie::set('returnUrl', $_SERVER['REQUEST_URI']);
-		Request::current()->redirect('user/login');
+		HTTP::redirect('user/login');
 	}
 
 	/**

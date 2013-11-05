@@ -12,7 +12,7 @@ class Useradmin_Provider_Twitter extends Provider_OAuth {
 
 	public function __construct()
 	{
-		parent::__construct('twitter');
+		parent::__construct('Twitter');
 	}
 
 	/**
@@ -23,7 +23,7 @@ class Useradmin_Provider_Twitter extends Provider_OAuth {
 	{
 		$config_secret = Kohana::$config->load('oauth')->get('twitter');
 		// create token
-		$request_token = OAuth_Token::factory('request', array(
+		$request_token = OAuth_Token::factory('Request', array(
 			'token' => $_REQUEST['oauth_token'],
 			'secret' => $config_secret['secret']
 		));
@@ -34,7 +34,7 @@ class Useradmin_Provider_Twitter extends Provider_OAuth {
 		if ($access_token and $access_token->name === 'access')
 		{
 			// @link  http://dev.twitter.com/doc/get/account/verify_credentials
-			$request = OAuth_Request::factory('resource', 'GET', 'http://api.twitter.com/1/account/verify_credentials.json', array(
+			$request = OAuth_Request::factory('Resource', 'GET', 'http://api.twitter.com/1.1/account/verify_credentials.json', array(
 				'oauth_consumer_key' => $this->consumer->key, 
 				'oauth_token' => $access_token->token
 			));
@@ -62,10 +62,10 @@ class Useradmin_Provider_Twitter extends Provider_OAuth {
 	}
 
 	/**
-	 * Attempt to get the email from the provider (e.g. for finding an existing account to associate with).
+	 * Attempt to get the email from the Provider (e.g. for finding an existing account to associate with).
 	 * @return string
 	 */
-	public function email()
+	public function Email()
 	{
 		if (isset($this->data['email']))
 		{

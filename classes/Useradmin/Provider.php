@@ -51,10 +51,10 @@ abstract class Useradmin_Provider {
 	abstract public function user_id();
 
 	/**
-	 * Attempt to get the email from the provider (e.g. for finding an existing account to associate with).
+	 * Attempt to get the email from the Provider (e.g. for finding an existing account to associate with).
 	 * @return string
 	 */
-	abstract public function email();
+	abstract public function Email();
 
 	/**
 	 * Get the full name (firstname surname) from the provider.
