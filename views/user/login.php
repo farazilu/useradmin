@@ -32,7 +32,7 @@ echo $form->password('password', null, array('class' => 'text twothirds'));
 $authClass = new ReflectionClass(get_class(Auth::instance()));
 if($authClass->hasMethod('auto_login'))
 {
-echo '<li>'.Kohana_FORM::checkbox('remember','remember',false,array('style'=>'margin-right: 10px','id'=>'remember')).
+echo '<li>'.Kohana_Form::checkbox('remember','remember',false,array('style'=>'margin-right: 10px','id'=>'remember')).
             $form->label('remember', __('Remember me'),array('style'=>'display: inline')).
             $form->submit(NULL, __('Login'),array('style'=>'float: right;')).
      '</li>';

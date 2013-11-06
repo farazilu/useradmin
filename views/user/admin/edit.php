@@ -37,7 +37,7 @@ echo $form->open('admin_user/edit/'.$id);
             echo ' class="odd"';
          }
          echo '>';
-         echo '<td>'.FORM::checkbox('roles['.$role.']', $role, (in_array($role, $user_roles) ? true : false)).'</td>';
+         echo '<td>'.Form::checkbox('roles['.$role.']', $role, (in_array($role, $user_roles) ? true : false)).'</td>';
          echo '<td>'.ucfirst($role).'</td><td>'.$description.'</td>';
          echo '</tr>';
          $i++;
