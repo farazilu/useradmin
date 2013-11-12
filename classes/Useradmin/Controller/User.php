@@ -169,6 +169,10 @@ class Useradmin_Controller_User extends Controller_App {
 				$this->redirect('user/profile');
 				return;
 			}
+			catch (HTTP_Exception_Redirect $e)
+			{
+				$this->response = $e->get_response();
+			}
 			catch (ORM_Validation_Exception $e)
 			{
 				// Get errors for display in view
@@ -254,6 +258,10 @@ class Useradmin_Controller_User extends Controller_App {
 				Auth::instance()->login($_POST['username'], $_POST['password']);
 				// redirect to the user account
 				$this->redirect(Cookie::get('returnUrl', Session::instance()->get_once('returnUrl',$this->default_redirect_url)));
+			}
+			catch (HTTP_Exception_Redirect $e)
+			{
+				$this->response = $e->get_response();
 			}
 			catch (ORM_Validation_Exception $e)
 			{
@@ -780,6 +788,10 @@ class Useradmin_Controller_User extends Controller_App {
 					Auth::instance()->login($values['username'], $password);
 					// redirect to the user account
 					$this->redirect(Cookie::get('returnUrl', Session::instance()->get_once('returnUrl','user/profile')));
+				}
+				catch (HTTP_Exception_Redirect $e)
+				{
+					$this->response = $e->get_response();
 				}
 				catch (ORM_Validation_Exception $e)
 				{
