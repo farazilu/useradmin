@@ -172,6 +172,7 @@ class Useradmin_Controller_User extends Controller_App {
 			catch (HTTP_Exception_Redirect $e)
 			{
 				$this->response = $e->get_response();
+				return true;
 			}
 			catch (ORM_Validation_Exception $e)
 			{
@@ -262,6 +263,7 @@ class Useradmin_Controller_User extends Controller_App {
 			catch (HTTP_Exception_Redirect $e)
 			{
 				$this->response = $e->get_response();
+				return true;
 			}
 			catch (ORM_Validation_Exception $e)
 			{
@@ -792,6 +794,7 @@ class Useradmin_Controller_User extends Controller_App {
 				catch (HTTP_Exception_Redirect $e)
 				{
 					$this->response = $e->get_response();
+					return true;
 				}
 				catch (ORM_Validation_Exception $e)
 				{
