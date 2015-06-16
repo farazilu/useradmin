@@ -12,7 +12,7 @@ class Useradmin_Controller_Admin_User extends Controller_App {
 	/**
 	 * @var string Filename of the template file.
 	 */
-	public $template = 'template/useradmin';
+	public $template = 'template';
 
 	/**
 	 * Controls access for the whole controller, if not set to FALSE we will only allow user roles specified.
