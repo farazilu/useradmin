@@ -97,12 +97,12 @@ class Useradmin_Controller_Admin_User extends Controller_App {
 			if (is_numeric($id))
 			{
 				// EDIT: load the model with ID
-				$user = ORM::factory('user', $id);
+				$user = ORM::factory('User', $id);
 			}
 			else
 			{
 				// CREATE: do not specify id
-				$user = ORM::factory('user');
+				$user = ORM::factory('User');
 			}
 			if (empty($_POST['password']) || empty($_POST['password_confirm']))
 			{
@@ -158,7 +158,7 @@ class Useradmin_Controller_Admin_User extends Controller_App {
 				{
 					// add() executes the query immediately, and saves the data (unlike the KO2 docs say)
 					$user->add('roles', 
-						ORM::factory('role')->where('name', '=', $role)
+						ORM::factory('Role')->where('name', '=', $role)
 						                    ->find()
 					);
 				}
@@ -182,7 +182,7 @@ class Useradmin_Controller_Admin_User extends Controller_App {
 		if (is_numeric($id))
 		{
 			// instantiatiate a new model
-			$user = ORM::factory('user', $id);
+			$user = ORM::factory('User', $id);
 			$view->set('data', $user->as_array());
 			// retrieve roles into array
 			$roles = array();
@@ -200,7 +200,7 @@ class Useradmin_Controller_Admin_User extends Controller_App {
 		}
 		// get all roles
 		$all_roles = array();
-		$role_model = ORM::factory('role');
+		$role_model = ORM::factory('Role');
 		foreach ($role_model->order_by('name')->find_all() as $role)
 		{
 			$all_roles[$role->name] = $role->description;
