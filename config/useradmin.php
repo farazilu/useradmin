@@ -1,63 +1,64 @@
-<?php defined('SYSPATH') or die('No direct script access.');
+<?php
+
+defined('SYSPATH') or die('No direct script access.');
 
 return array(
-	'register_enabled' => true,
+    'register_enabled' => false,
     /**
      * The number of failed logins allowed can be specified here:
      * If the user mistypes their password X times, then they will not be permitted to log in during the jail time.
      * This helps prevent brute-force attacks.
      */
-   'auth' => array(
-      /**
-       * Define the maximum failed attempts to login
-       * set 0 to disable the login jail
-       */
-      'max_failed_logins' => 5,
-      /**
-       * Define the time that user who archive the max_failed_logins will need to 
-       * wait before his next attempt
-       */
-      'login_jail_time' => "5 minutes",
+    'auth' => array(
+        /**
+         * Define the maximum failed attempts to login
+         * set 0 to disable the login jail
+         */
+        'max_failed_logins' => 5,
+        /**
+         * Define the time that user who archive the max_failed_logins will need to
+         * wait before his next attempt
+         */
+        'login_jail_time' => "5 minutes"
     ),
     /**
      * 3rd party providers supported/allowed.
      */
     'providers' => array(
-       /**
-        * Toggle Facebook support: if set, then users can log in using Facebook.
-        *
-        * Setup:
-        * - You need the extra table from schema.sql for storing 3rd party identifiers
-        * - You must register your app with FB and add the information in /config/facebook.php
-        * - You must have the Facebook SDK at /vendors/facebook/src/facebook.php (bundled in the default repo)
-        *
-        */
-       'facebook' => false,
-       /**
-        * Toggle Twitter support: if set, users can log in using Twitter
-        *
-        * Setup:
-        * - You need the extra table from schema.sql for storing 3rd party identifiers
-        * - You must register your app with Twitter and add the information in /config/oauth.php (Kohana-Oauth's config)
-        * - You must enable the Kohana Core oauth module
-        */
-       'twitter' => false,
-       /**
-        * Toggle Google support: if set, users can log in using their Google account.
-        *
-        * Setup:
-        * - You need the extra table from schema.sql for storing 3rd party identifiers
-        * - You must have LightOpenID in /vendors/lightopenid/openid.php (bundled in the repo)
-        */
-       'google' => false,
-       /**
-        * Toggle Yahoo support: if set, users can log in using their Yahoo account.
-        *
-        * Setup:
-        * - You need the extra table from schema.sql for storing 3rd party identifiers
-        * - You must have LightOpenID in /vendors/lightopenid/openid.php (bundled in the repo)
-        */
-       'yahoo' => false,
+        /**
+         * Toggle Facebook support: if set, then users can log in using Facebook.
+         *
+         * Setup:
+         * - You need the extra table from schema.sql for storing 3rd party identifiers
+         * - You must register your app with FB and add the information in /config/facebook.php
+         * - You must have the Facebook SDK at /vendors/facebook/src/facebook.php (bundled in the default repo)
+         */
+        'facebook' => false,
+        /**
+         * Toggle Twitter support: if set, users can log in using Twitter
+         *
+         * Setup:
+         * - You need the extra table from schema.sql for storing 3rd party identifiers
+         * - You must register your app with Twitter and add the information in /config/oauth.php (Kohana-Oauth's config)
+         * - You must enable the Kohana Core oauth module
+         */
+        'twitter' => false,
+        /**
+         * Toggle Google support: if set, users can log in using their Google account.
+         *
+         * Setup:
+         * - You need the extra table from schema.sql for storing 3rd party identifiers
+         * - You must have LightOpenID in /vendors/lightopenid/openid.php (bundled in the repo)
+         */
+        'google' => false,
+        /**
+         * Toggle Yahoo support: if set, users can log in using their Yahoo account.
+         *
+         * Setup:
+         * - You need the extra table from schema.sql for storing 3rd party identifiers
+         * - You must have LightOpenID in /vendors/lightopenid/openid.php (bundled in the repo)
+         */
+        'yahoo' => false
     ),
     /**
      * Toggle email support: if set, then users (except admins) can reset user accounts via email.
@@ -77,5 +78,5 @@ return array(
      * - You must have the reCaptcha library (e.g. http://recaptcha.net) in your vendors directory. (bundled in the default repo)
      * - You must set the private and public key in /config/recaptcha.php from https://www.google.com/recaptcha/admin/create
      */
-    'captcha' => false,
-    );
+    'captcha' => false
+);

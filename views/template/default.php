@@ -10,6 +10,7 @@ defined('SYSPATH') or die('No direct script access.');
 <!-- Latest compiled and minified CSS -->
 <title><?php echo $title ?></title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
    <?php foreach ($styles as $file => $type) echo HTML::style($file, array('media' => $type)), "\n"?>
    <?php foreach ($scripts as $file) echo HTML::script($file), "\n"?>
    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
@@ -26,6 +27,9 @@ $registerEnabled = Kohana::$config->load('useradmin.register_enabled');
 
 if (Auth::instance()->logged_in()) {
     echo '<li>' . HTML::anchor('admin_user', 'User admin') . '</li>';
+    echo '<li>' . HTML::anchor('admin_product', 'Product admin') . '</li>';
+    echo '<li>' . HTML::anchor('admin_genre', 'Genre admin') . '</li>';
+    echo '<li>' . HTML::anchor('admin_song', 'Song admin') . '</li>';
     echo '<li>' . HTML::anchor('user/profile', 'My profile') . '</li>';
     echo '<li>' . HTML::anchor('user/logout', 'Log out') . '</li>';
 } else {
