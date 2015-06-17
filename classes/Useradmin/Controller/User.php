@@ -1,5 +1,4 @@
 <?php
-
 defined('SYSPATH') or die('No direct access allowed.');
 
 /**
@@ -9,14 +8,14 @@ defined('SYSPATH') or die('No direct access allowed.');
  * @package default
  * @version 1.0
  */
-class Useradmin_Controller_User extends Controller_App
+class Useradmin_Controller_User extends Useradmin_Controller_App
 {
 
     /**
      *
      * @var string Filename of the template file.
      */
-    public $template = 'template';
+  //  public $template = 'template';
 
     /**
      * Controls access for the whole controller, if not set to FALSE we will only allow user roles specified.
@@ -44,8 +43,8 @@ class Useradmin_Controller_User extends Controller_App
         'unregister' => 'login',
         'change_password' => 'login'
     );
- // the others are public (forgot, login, register, reset, noaccess)
-       // logout is also public to avoid confusion (e.g. easier to specify and test post-logout page)
+    // the others are public (forgot, login, register, reset, noaccess)
+    // logout is also public to avoid confusion (e.g. easier to specify and test post-logout page)
     
     /**
      * User Model Fields
@@ -501,7 +500,7 @@ class Useradmin_Controller_User extends Controller_App
 
     /**
      * Redirect to the provider's auth URL
-     * 
+     *
      * @param string $provider            
      */
     function action_provider()

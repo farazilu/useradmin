@@ -1,41 +1,48 @@
+<?php
+defined('SYSPATH') or die('No direct script access.');
+?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" dir="ltr" lang="en-US">
+<html lang="en">
 <head>
-   <title><?php echo $title ?></title>
-   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-   <?php foreach ($styles as $file => $type) echo HTML::style($file, array('media' => $type)), "\n" ?>
-   <?php foreach ($scripts as $file) echo HTML::script($file), "\n" ?>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+<title><?php echo $title ?></title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+   <?php foreach ($styles as $file => $type) echo HTML::style($file, array('media' => $type)), "\n"?>
+   <?php foreach ($scripts as $file) echo HTML::script($file), "\n"?>
    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 </head>
 <body>
-   <div id="page">
-      <div id="header"></div>
-      <div id="navigation">
-         <ul class="menu">
+	<div id="page">
+		<div id="header"></div>
+		<div id="navigation">
+			<ul class="menu">
 
 			<?php
-			$session = Session::instance();
-			$registerEnabled = Kohana::$config->load('useradmin.register_enabled');
+$session = Session::instance();
+$registerEnabled = Kohana::$config->load('useradmin.register_enabled');
 
-			if (Auth::instance()->logged_in()){
-				echo '<li>'.HTML::anchor('admin_user', 'User admin').'</li>';
-				echo '<li>'.HTML::anchor('user/profile', 'My profile').'</li>';
-				echo '<li>'.HTML::anchor('user/logout', 'Log out').'</li>';
-			} else {
-				if($registerEnabled)
-					echo '<li>'.HTML::anchor('user/register', 'Register').'</li>';
-				echo '<li>'.HTML::anchor('user/login', 'Log in').'</li>';
-			}
-           ?>
+if (Auth::instance()->logged_in()) {
+    echo '<li>' . HTML::anchor('admin_user', 'User admin') . '</li>';
+    echo '<li>' . HTML::anchor('user/profile', 'My profile') . '</li>';
+    echo '<li>' . HTML::anchor('user/logout', 'Log out') . '</li>';
+} else {
+    if ($registerEnabled)
+        echo '<li>' . HTML::anchor('user/register', 'Register') . '</li>';
+    echo '<li>' . HTML::anchor('user/login', 'Log in') . '</li>';
+}
+?>
          </ul>
-      </div>
-   <div id="content">
+		</div>
+		<div id="content">
     <?php
     // output messages
-     echo Message::output();
-     echo $content ?>
+    echo Message::output();
+    echo $content?>
    </div>
-</div>
+	</div>
    
 <?=$profile?>
 </body>
