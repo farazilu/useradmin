@@ -11,6 +11,7 @@ defined('SYSPATH') or die('No direct script access.');
 <title><?php echo $title ?></title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
    <?php foreach ($styles as $file => $type) echo HTML::style($file, array('media' => $type)), "\n"?>
    <?php foreach ($scripts as $file) echo HTML::script($file), "\n"?>
    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
