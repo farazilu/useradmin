@@ -28,14 +28,6 @@ $registerEnabled = Kohana::$config->load('useradmin.register_enabled');
 
 if (Auth::instance()->logged_in()) {
     echo '<li>' . HTML::anchor('admin_user', 'User admin') . '</li>';
-    echo '<li>' . HTML::anchor('admin_product', 'Product admin') . '</li>';
-    echo '<li>' . HTML::anchor('admin_genre', 'Genre admin') . '</li>';
-    echo '<li>' . HTML::anchor('admin_song', 'Song admin') . '</li>';
-    echo '<li>' . HTML::anchor('admin_order', 'Orders admin') . '</li>';
-    echo '<li>' . HTML::anchor('admin_order/print', 'Orders Print', array(
-        'target' => '_blank'
-    )) . '</li>';
-    echo '<li>' . HTML::anchor('admin_shipping', 'Shipping admin') . '</li>';
     echo '<li>' . HTML::anchor('user/profile', 'My profile') . '</li>';
     echo '<li>' . HTML::anchor('user/logout', 'Log out') . '</li>';
 } else {
